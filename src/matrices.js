@@ -12,6 +12,9 @@ export class Matrix3x3 {
     this.firstRow = firstRow;
     this.secondRow = secondRow;
     this.thirdRow = thirdRow;
+    this.firstColumn = new Vector3D(firstRow.x, secondRow.x, thirdRow.x);
+    this.secondColumn = new Vector3D(firstRow.y, secondRow.y, thirdRow.y);
+    this.thirdColumn = new Vector3D(firstRow.z, secondRow.z, thirdRow.z);
   }
 
   /**
@@ -35,19 +38,19 @@ export class Matrix3x3 {
   timesMatrix(m) {
     return new Matrix3x3(
       new Vector3D(
-        this.firstRow.dot(m.firstColumn()),
-        this.firstRow.dot(m.secondColumn()),
-        this.firstRow.dot(m.thirdColumn())
+        this.firstRow.dot(m.firstColumn),
+        this.firstRow.dot(m.secondColumn),
+        this.firstRow.dot(m.thirdColumn)
       ),
       new Vector3D(
-        this.secondRow.dot(m.firstColumn()),
-        this.secondRow.dot(m.secondColumn()),
-        this.secondRow.dot(m.thirdColumn())
+        this.secondRow.dot(m.firstColumn),
+        this.secondRow.dot(m.secondColumn),
+        this.secondRow.dot(m.thirdColumn)
       ),
       new Vector3D(
-        this.thirdRow.dot(m.firstColumn()),
-        this.thirdRow.dot(m.secondColumn()),
-        this.thirdRow.dot(m.thirdColumn())
+        this.thirdRow.dot(m.firstColumn),
+        this.thirdRow.dot(m.secondColumn),
+        this.thirdRow.dot(m.thirdColumn)
       )
     )
   }
@@ -99,9 +102,9 @@ export class Matrix3x3 {
    */
   transpose() {
     return new Matrix3x3(
-      this.firstColumn(),
-      this.secondColumn(),
-      this.thirdColumn()
+      this.firstColumn,
+      this.secondColumn,
+      this.thirdColumn
     )
   }
 
@@ -150,26 +153,5 @@ export class Matrix3x3 {
       this.secondRow.scale(s),
       this.thirdRow.scale(s)
     );
-  }
-
-  /**
-   * Returns the first column of this matrix.
-   */
-  firstColumn() {
-    return new Vector3D(this.firstRow.x, this.secondRow.x, this.thirdRow.x);
-  }
-
-  /**
-   * Returns the second column of this matrix.
-   */
-  secondColumn() {
-    return new Vector3D(this.firstRow.y, this.secondRow.y, this.thirdRow.y);
-  }
-
-  /**
-   * Returns the third column of this matrix.
-   */
-  thirdColumn() {
-    return new Vector3D(this.firstRow.z, this.secondRow.z, this.thirdRow.z);
   }
 }

@@ -24,10 +24,10 @@
   },
   "homepage": "https://github.com/brandon-sexton/linalg-js#readme",
   "dependencies": {
-    "babel": "^6.23.0",
-    "jest": "^29.7.0"
+    "babel": "^6.23.0"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "@babel/preset-env": "^7.23.6",
     "eslint": "^8.56.0",
     "eslint-config-google": "^0.14.0"

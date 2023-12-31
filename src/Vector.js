@@ -87,7 +87,7 @@ export class Vector extends Array {
 
   /**
    * Returns a normalized version of this vector.
-   * @return {Vector3D} The normalized vector.
+   * @return {Vector} The normalized vector.
    */
   normalize() {
     return this.scale(1 / this.magnitude());

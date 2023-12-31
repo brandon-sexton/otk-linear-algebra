@@ -1,6 +1,6 @@
 {
   "name": "@brandon.sexton/linalg-js",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "basic linear algebra package for small-dimension vectors and matrices",
   "main": "index.js",
   "scripts": {

@@ -135,4 +135,13 @@ export class Vector extends Array {
     );
     return new Vector(row1.dot(this), row2.dot(this), row3.dot(this));
   }
+
+  /**
+   * Calculates the angle between this vector and another vector.
+   * @param {Vector} v - The other vector.
+   * @return {number} The angle between the vectors.
+   */
+  getAngle(v) {
+    return Math.acos(this.dot(v) / (this.magnitude() * v.magnitude()));
+  }
 }

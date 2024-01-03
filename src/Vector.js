@@ -100,4 +100,39 @@ export class Vector extends Array {
   toString() {
     return `[${this.join(', ')}]`;
   }
+
+  /**
+   * Rotates this vector about an axis by an angle.
+   * @param {Vector} axis - The axis of rotation.
+   * @param {number} angle - The angle of rotation.
+   * @return {Vector} The rotated vector.
+   * @example
+   * const v = new Vector(1, 0, 0);
+   * const axis = new Vector(0, 0, 1);
+   * const angle = Math.PI / 2;
+   * const w = v.rotateAboutAxis(axis, angle);
+   * console.log(w); // [0, 1, 0]
+   */
+  rotateAboutAxis(axis, angle) {
+    const u = axis.normalize();
+    const c = Math.cos(angle);
+    const s = Math.sin(angle);
+    const t = 1 - c;
+    const row1 = new Vector(
+        t * u[0] * u[0] + c,
+        t * u[0] * u[1] - s * u[2],
+        t * u[0] * u[2] + s * u[1],
+    );
+    const row2 = new Vector(
+        t * u[0] * u[1] + s * u[2],
+        t * u[1] * u[1] + c,
+        t * u[1] * u[2] - s * u[0],
+    );
+    const row3 = new Vector(
+        t * u[0] * u[2] - s * u[1],
+        t * u[1] * u[2] + s * u[0],
+        t * u[2] * u[2] + c,
+    );
+    return new Vector(row1.dot(this), row2.dot(this), row3.dot(this));
+  }
 }

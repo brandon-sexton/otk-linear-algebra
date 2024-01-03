@@ -28,3 +28,13 @@ test('Vector cross product', () => {
   const v2 = new Vector(4, 5, 6);
   expect(v1.cross(v2)).toEqual(new Vector(-3, 6, -3));
 });
+
+test('Vector rotation', () => {
+  const v = new Vector(1, 0, 0);
+  const axis = new Vector(0, 0, 1);
+  const answer = new Vector(0, 1, 0);
+  const result = v.rotateAboutAxis(axis, Math.PI / 2);
+  expect(result[0]).toBeCloseTo(answer[0]);
+  expect(result[1]).toBeCloseTo(answer[1]);
+  expect(result[2]).toBeCloseTo(answer[2]);
+});

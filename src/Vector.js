@@ -144,4 +144,12 @@ export class Vector extends Array {
   getAngle(v) {
     return Math.acos(this.dot(v) / (this.magnitude() * v.magnitude()));
   }
+
+  /**
+   * Returns a copy of this vector.
+   * @return {Vector} The copy of the vector.
+   */
+  copy() {
+    return new Vector(...this);
+  }
 }

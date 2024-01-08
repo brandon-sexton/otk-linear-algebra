@@ -34,7 +34,7 @@ export class Matrix extends Array {
     if (this.length !== v.length) {
       throw new Error('Matrix and vector must have the same length');
     }
-    return this.map((row) => row.dot(v));
+    return new Vector(...this.map((row) => row.dot(v)));
   }
 
   /**

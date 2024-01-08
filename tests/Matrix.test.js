@@ -109,3 +109,16 @@ test('Matrix valid inverse', () => {
   );
 });
 
+test('Matrix vector multiplication', () => {
+  const m = new Matrix(
+      new Vector(1, 2, 3),
+      new Vector(4, 5, 6),
+      new Vector(7, 8, 9),
+  );
+  const v = new Vector(1, 2, 3);
+  const result = m.timesVector(v);
+  expect(result[0]).toBe(14);
+  expect(result[1]).toBe(32);
+  expect(result[2]).toBe(50);
+  expect(result instanceof Vector).toBe(true);
+});

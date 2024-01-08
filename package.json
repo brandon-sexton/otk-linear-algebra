@@ -1,6 +1,6 @@
 {
   "name": "vector-matrix-math",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "basic linear algebra package for small-dimension vectors and matrices",
   "main": "index.js",
   "scripts": {
@@ -23,18 +23,10 @@
     "url": "https://github.com/brandon-sexton/linalg-js/issues"
   },
   "homepage": "https://github.com/brandon-sexton/linalg-js#readme",
-  "dependencies": {
-  },
   "devDependencies": {
     "jest": "^29.7.0",
     "@babel/preset-env": "^7.23.6",
     "eslint": "^8.56.0",
     "eslint-config-google": "^0.14.0"
-  },
-  "jest": {
-    "transformIgnorePatterns": [
-      "/node_modules/(?!unit-conversions-js)"
-    ],
-    "testEnvironment": "node"
   }
 }

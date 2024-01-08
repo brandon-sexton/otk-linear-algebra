@@ -3,18 +3,48 @@ import {Vector} from '../src/Vector';
 test('Vector addition', () => {
   const v1 = new Vector(1, 2, 3);
   const v2 = new Vector(4, 5, 6);
-  expect(v1.plus(v2)).toEqual(new Vector(5, 7, 9));
+  const result = v1.plus(v2);
+  const answer = new Vector(5, 7, 9);
+  expect(result[0]).toBeCloseTo(answer[0]);
+  expect(result[1]).toBeCloseTo(answer[1]);
+  expect(result[2]).toBeCloseTo(answer[2]);
+  expect(v1[0]).toBe(1);
+  expect(v1[1]).toBe(2);
+  expect(v1[2]).toBe(3);
+  expect(v2[0]).toBe(4);
+  expect(v2[1]).toBe(5);
+  expect(v2[2]).toBe(6);
+  expect(result instanceof Vector).toBe(true);
 });
 
 test('Vector subtraction', () => {
   const v1 = new Vector(1, 2, 3);
   const v2 = new Vector(4, 5, 6);
-  expect(v1.minus(v2)).toEqual(new Vector(-3, -3, -3));
+  const result = v1.minus(v2);
+  const answer = new Vector(-3, -3, -3);
+  expect(result[0]).toBeCloseTo(answer[0]);
+  expect(result[1]).toBeCloseTo(answer[1]);
+  expect(result[2]).toBeCloseTo(answer[2]);
+  expect(v1[0]).toBe(1);
+  expect(v1[1]).toBe(2);
+  expect(v1[2]).toBe(3);
+  expect(v2[0]).toBe(4);
+  expect(v2[1]).toBe(5);
+  expect(v2[2]).toBe(6);
+  expect(result instanceof Vector).toBe(true);
 });
 
 test('Vector scaling', () => {
   const v = new Vector(1, 2, 3);
-  expect(v.scale(2)).toEqual(new Vector(2, 4, 6));
+  const result = v.scale(2);
+  const answer = new Vector(2, 4, 6);
+  expect(result[0]).toBeCloseTo(answer[0]);
+  expect(result[1]).toBeCloseTo(answer[1]);
+  expect(result[2]).toBeCloseTo(answer[2]);
+  expect(v[0]).toBe(1);
+  expect(v[1]).toBe(2);
+  expect(v[2]).toBe(3);
+  expect(result instanceof Vector).toBe(true);
 });
 
 test('Vector dot product', () => {

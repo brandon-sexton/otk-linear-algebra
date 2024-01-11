@@ -1,6 +1,6 @@
 {
-  "name": "vector-matrix-math",
-  "version": "0.1.5",
+  "name": "otk-linear-algebra",
+  "version": "0.1.0",
   "description": "basic linear algebra package for small-dimension vectors and matrices",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brandon-sexton/linalg-js.git"
+    "url": "git+https://github.com/brandon-sexton/otk-linear-algebra.git"
   },
   "keywords": [
     "linear",
@@ -20,9 +20,9 @@
   "author": "Brandon Sexton",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brandon-sexton/linalg-js/issues"
+    "url": "https://github.com/brandon-sexton/otk-linear-algebra/issues"
   },
-  "homepage": "https://github.com/brandon-sexton/linalg-js#readme",
+  "homepage": "https://github.com/brandon-sexton/otk-linear-algebra#readme",
   "devDependencies": {
     "jest": "^29.7.0",
     "@babel/preset-env": "^7.23.6",
